@@ -49,7 +49,7 @@ namespace SpanishVerbConjugator
                 string strThirdPersonSingular = "";
                 string strFirstPersonPlural = "";
                 string strSecondPersonPlural = "";
-                string strThirdPersonSPlural = "";
+                string strThirdPersonPlural = "";
 
                 rtbMessages.Text = "You selected " + strSelectedConjugation + "\r";
                 rtbMessages.Text = rtbMessages.Text + "Spanish Verb: " + strSpanishInfinitive + "\r";
@@ -115,6 +115,35 @@ namespace SpanishVerbConjugator
                             strPastParticiple = strStem + "ido";
                         break;
                 }
+
+                // Form the Imperfect Tense
+                string strFirstPersonSingularImperfect = "";
+                string strSecondPersonSingularImperfect = "";
+                string strThirdPersonSingularImperfect = "";
+                string strFirstPersonPluralImperfect = "";
+                string strSecondPersonPluralImperfect = "";
+                string strThirdPersonPluralImperfect = "";
+
+                switch (strSelectedConjugation.Trim())
+                {
+                    case "First-conjugation -ar verbs":
+                        strFirstPersonSingularImperfect = strStem + "aba";
+                        strSecondPersonSingularImperfect = strStem + "abas";
+                        strThirdPersonSingularImperfect = strStem + "aba";
+                        strFirstPersonPluralImperfect = strStem + "ábamos";
+                        strSecondPersonPluralImperfect = strStem + "abais";
+                        strThirdPersonPluralImperfect = strStem + "aban";
+                        break;
+                    default:
+                        strFirstPersonSingularImperfect = strStem + "ía";
+                        strSecondPersonSingularImperfect = strStem + "ías";
+                        strThirdPersonSingularImperfect = strStem + "ía";
+                        strFirstPersonPluralImperfect = strStem + "íamos";
+                        strSecondPersonPluralImperfect = strStem + "íais";
+                        strThirdPersonPluralImperfect = strStem + "ían";
+                        break;
+                }
+
                 objStreamWriter.WriteLine(@"Transitive verb (takes a direct object) <br>");
                 objStreamWriter.WriteLine(@"Intransitive verb (does not take a direct object) </p>");
                 objStreamWriter.WriteLine(@"<p><b>infinitive:</b> <span lang=""es"">" + strSpanishInfinitive + "</span><br>");
@@ -133,7 +162,7 @@ namespace SpanishVerbConjugator
                             strThirdPersonSingular = strStem + "a";
                             strFirstPersonPlural = strStem + "amos";
                             strSecondPersonPlural = strStem + "áis";
-                            strThirdPersonSPlural = strStem + "an";
+                            strThirdPersonPlural = strStem + "an";
                         break;
                     case "Second-conjugation -er verbs":
                             strFirstPersonSingular = strStem + "o";
@@ -141,7 +170,7 @@ namespace SpanishVerbConjugator
                             strThirdPersonSingular = strStem + "e";
                             strFirstPersonPlural = strStem + "emos";
                             strSecondPersonPlural = strStem + "éis";
-                            strThirdPersonSPlural = strStem + "en";
+                            strThirdPersonPlural = strStem + "en";
                         break;
                     default:
                             strFirstPersonSingular = strStem + "o";
@@ -149,7 +178,7 @@ namespace SpanishVerbConjugator
                             strThirdPersonSingular = strStem + "e";
                             strFirstPersonPlural = strStem + "imos";
                             strSecondPersonPlural = strStem + "ís";
-                            strThirdPersonSPlural = strStem + "en";
+                            strThirdPersonPlural = strStem + "en";
                         break;
                 }
 
@@ -178,19 +207,19 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + ", you are " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + ", you are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>he " + strEnglishInfinitive + "s, he is " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + ", they are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>she  " + strEnglishInfinitive + "s, she is " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + ", they are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
@@ -205,7 +234,7 @@ namespace SpanishVerbConjugator
                         strThirdPersonSingular = strStem + "ó";
                         strFirstPersonPlural = strStem + "amos";
                         strSecondPersonPlural = strStem + "asteis";
-                        strThirdPersonSPlural = strStem + "aron";
+                        strThirdPersonPlural = strStem + "aron";
                         break;
                     case "Second-conjugation -er verbs":
                         strFirstPersonSingular = strStem + "í";
@@ -213,7 +242,7 @@ namespace SpanishVerbConjugator
                         strThirdPersonSingular = strStem + "ió";
                         strFirstPersonPlural = strStem + "imos";
                         strSecondPersonPlural = strStem + "isteis";
-                        strThirdPersonSPlural = strStem + "ieron";
+                        strThirdPersonPlural = strStem + "ieron";
                         break;
                     default:
                         strFirstPersonSingular = strStem + "í";
@@ -221,7 +250,7 @@ namespace SpanishVerbConjugator
                         strThirdPersonSingular = strStem + "ió";
                         strFirstPersonPlural = strStem + "imos";
                         strSecondPersonPlural = strStem + "isteis";
-                        strThirdPersonSPlural = strStem + "ieron";
+                        strThirdPersonPlural = strStem + "ieron";
                         break;
                 }
 
@@ -250,19 +279,19 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>he " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>she " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
@@ -275,7 +304,7 @@ namespace SpanishVerbConjugator
                 strThirdPersonSingular = strSpanishInfinitive + "á";
                 strFirstPersonPlural = strSpanishInfinitive + "emos";
                 strSecondPersonPlural = strSpanishInfinitive + "éis";
-                strThirdPersonSPlural = strSpanishInfinitive + "án";
+                strThirdPersonPlural = strSpanishInfinitive + "án";
 
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"">");
                 objStreamWriter.WriteLine(@"<span class=""SectionTitle""><span lang=""es"">El Futuro</span> - The Future Tense</span>");
@@ -302,19 +331,19 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>you will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>you will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>he will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>they will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
                 objStreamWriter.WriteLine(@"		<td>she will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonSPlural + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
                 objStreamWriter.WriteLine(@"		<td>they will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
@@ -364,12 +393,64 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"	</table>");
                 objStreamWriter.WriteLine(@"</div>");
 
-                 objStreamWriter.WriteLine(@"<p>The perfect tense in Spanish has two parts to it. The present tense of");
+                objStreamWriter.WriteLine(@"<p>The perfect tense in Spanish has two parts to it. The present tense of");
                 objStreamWriter.WriteLine(@"the verb <strong>haber</strong> (to have) plus the past participle. The present prefect tense"); 
                 objStreamWriter.WriteLine(@"expresses past action closely related to the present. The English equivalent");
                 objStreamWriter.WriteLine(@"of <strong>haber</strong> + past participle is <em>to have done something</em>.</p>");
                 objStreamWriter.WriteLine(@"<p><img alt=""Note"" height=""10"" src=""images/note.gif"" width=""10""><span class=""NoteText"">"); 
                 objStreamWriter.WriteLine(@"This is the present perfect indicative, not the present perfect subjunctive.</span></p>");
+
+                // The Imperfect Tense 
+                objStreamWriter.WriteLine(@"<hr style = ""border: 0; color: #000000; height: 1px;"">");
+                objStreamWriter.WriteLine(@"<span class=""SectionTitle""><span lang=""es"">El Imperfecto de Indicativo</span> - The Imperfect Tense</span>");
+                objStreamWriter.WriteLine(@"<table class=""DataTable"">");
+                objStreamWriter.WriteLine(@"	<tr>");
+                objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Español</th>");
+                objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
+                objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Español</th>");
+                objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
+                objStreamWriter.WriteLine(@"	</tr>");
+                objStreamWriter.WriteLine(@"	<tr>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingularImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>I was " + strEnglishInfinitive + "ing, I used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPluralImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>we were " + strEnglishInfinitive + "ing, we used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"	</tr>");
+                objStreamWriter.WriteLine(@"	<tr>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingularImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPluralImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"	</tr>");
+                objStreamWriter.WriteLine(@"	<tr>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingularImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPluralImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"	</tr>");
+                objStreamWriter.WriteLine(@"	<tr>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingularImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>he was " + strEnglishInfinitive + "ing, he used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPluralImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>they were " + strEnglishInfinitive + "ing, they used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"	</tr>");
+                objStreamWriter.WriteLine(@"	<tr>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingularImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>she was " + strEnglishInfinitive + "ing, she used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPluralImperfect + "</td>");
+                objStreamWriter.WriteLine(@"		<td>they were " + strEnglishInfinitive + "ing, they used to " + strEnglishInfinitive + "</td>");
+                objStreamWriter.WriteLine(@"	</tr>");
+                objStreamWriter.WriteLine(@"	</table>");
+                objStreamWriter.WriteLine(@"");
+                objStreamWriter.WriteLine(@"<p>The imperfect tense expresses actions in the past that are not seen as ");
+                objStreamWriter.WriteLine(@"completed. It is used to indicate situations or actions in the past with no ");
+                objStreamWriter.WriteLine(@"specific reference to their beginning or end.</p>");
+                objStreamWriter.WriteLine(@"<p>The ");
+                objStreamWriter.WriteLine(@"imperfect indicative tense can be translated to English as &quot;used to " + strEnglishInfinitive + "&quot; or ");
+                objStreamWriter.WriteLine(@"&quot;was " + strEnglishInfinitive + "ing.&quot; </p>");
+                objStreamWriter.WriteLine(@"<p><strong>Was</strong>: is used with singular pronouns like &quot;I&quot; and &quot;he&quot;.<br>");
+                objStreamWriter.WriteLine(@"<strong>Were</strong>: is used with plural pronouns like &quot;we&quot; and &quot;they&quot;.<br>");
+                objStreamWriter.WriteLine(@"However, <strong>were</strong> is also used for &quot;you&quot;.</p>");
 
                 // Examples
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"">");
