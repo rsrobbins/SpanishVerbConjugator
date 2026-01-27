@@ -35,12 +35,13 @@
             this.tbSpanishInfinitive = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tbEnglishInfinitive = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.rtbMessages = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConjugate = new System.Windows.Forms.Button();
+            this.cbReflexive = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbReflexive);
             this.groupBox1.Controls.Add(this.cbConjugation);
             this.groupBox1.Controls.Add(this.tbSpanishInfinitive);
             this.groupBox1.Controls.Add(this.label1);
@@ -101,12 +103,19 @@
             this.groupBox2.Controls.Add(this.tbEnglishInfinitive);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(2, 203);
+            this.groupBox2.Location = new System.Drawing.Point(2, 209);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(529, 85);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "English";
+            // 
+            // tbEnglishInfinitive
+            // 
+            this.tbEnglishInfinitive.Location = new System.Drawing.Point(11, 44);
+            this.tbEnglishInfinitive.Name = "tbEnglishInfinitive";
+            this.tbEnglishInfinitive.Size = new System.Drawing.Size(198, 20);
+            this.tbEnglishInfinitive.TabIndex = 1;
             // 
             // label3
             // 
@@ -117,18 +126,11 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Enter English Infinitive:";
             // 
-            // tbEnglishInfinitive
-            // 
-            this.tbEnglishInfinitive.Location = new System.Drawing.Point(11, 44);
-            this.tbEnglishInfinitive.Name = "tbEnglishInfinitive";
-            this.tbEnglishInfinitive.Size = new System.Drawing.Size(198, 20);
-            this.tbEnglishInfinitive.TabIndex = 1;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 336);
+            this.label4.Location = new System.Drawing.Point(10, 341);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 6;
@@ -136,7 +138,7 @@
             // 
             // rtbMessages
             // 
-            this.rtbMessages.Location = new System.Drawing.Point(10, 359);
+            this.rtbMessages.Location = new System.Drawing.Point(10, 368);
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.Size = new System.Drawing.Size(521, 154);
             this.rtbMessages.TabIndex = 7;
@@ -154,13 +156,24 @@
             // 
             // btnConjugate
             // 
-            this.btnConjugate.Location = new System.Drawing.Point(10, 302);
+            this.btnConjugate.Location = new System.Drawing.Point(10, 308);
             this.btnConjugate.Name = "btnConjugate";
             this.btnConjugate.Size = new System.Drawing.Size(75, 23);
             this.btnConjugate.TabIndex = 8;
             this.btnConjugate.Text = "Conjugate";
             this.btnConjugate.UseVisualStyleBackColor = true;
             this.btnConjugate.Click += new System.EventHandler(this.btnConjugate_Click);
+            // 
+            // cbReflexive
+            // 
+            this.cbReflexive.AutoSize = true;
+            this.cbReflexive.Location = new System.Drawing.Point(11, 155);
+            this.cbReflexive.Name = "cbReflexive";
+            this.cbReflexive.Size = new System.Drawing.Size(116, 17);
+            this.cbReflexive.TabIndex = 5;
+            this.cbReflexive.Text = "Reflexive Verb?";
+            this.cbReflexive.UseVisualStyleBackColor = true;
+            this.cbReflexive.CheckedChanged += new System.EventHandler(this.cbReflexive_CheckedChanged);
             // 
             // Form1
             // 
@@ -200,6 +213,7 @@
         private System.Windows.Forms.RichTextBox rtbMessages;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnConjugate;
+        private System.Windows.Forms.CheckBox cbReflexive;
     }
 }
 

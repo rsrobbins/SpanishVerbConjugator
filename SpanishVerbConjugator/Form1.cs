@@ -13,6 +13,9 @@ namespace SpanishVerbConjugator
 {
     public partial class Form1 : Form
     {
+        // Global variable for this form
+        private Boolean bReflexiveVerb = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -42,8 +45,17 @@ namespace SpanishVerbConjugator
                 strSpanishInfinitiveCapitalized = textInfo.ToTitleCase(strSpanishInfinitive);
 
                 // Get the stem of the infitive
-                string strStem = strSpanishInfinitive.Remove(strSpanishInfinitive.Length - 2, 2);
+                string strStem = "";
+                if (bReflexiveVerb == false)
+                {
+                    strStem = strSpanishInfinitive.Remove(strSpanishInfinitive.Length - 2, 2);
+                }
+                else
+                {
+                    strStem = strSpanishInfinitive.Remove(strSpanishInfinitive.Length - 4, 4);
+                }
 
+  
                 string strFirstPersonSingular = "";
                 string strSecondPersonSingular = "";
                 string strThirdPersonSingular = "";
@@ -193,33 +205,110 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo me " + strFirstPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingular + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>I " + strEnglishInfinitive + ", I am " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                     objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros nos " + strFirstPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPlural + "</td>");
+                }
+                    
                 objStreamWriter.WriteLine(@"		<td>we " + strEnglishInfinitive + ", we are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú te " + strSecondPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingular + "</td>");
+                }
+                    
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + ", you are " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros vos " + strSecondPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPlural + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + ", you are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + ", you are " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + ", you are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>he " + strEnglishInfinitive + "s, he is " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + ", they are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>she  " + strEnglishInfinitive + "s, she is " + strEnglishInfinitive + "ing</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
+                }
+
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + ", they are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
@@ -265,33 +354,109 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo me " + strFirstPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>I " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros nos " + strFirstPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPlural + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>we " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú te " + strSecondPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros vos " + strSecondPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPlural + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + "ed</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
                 objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
+                }               
                 objStreamWriter.WriteLine(@"		<td>you " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
+                }             
                 objStreamWriter.WriteLine(@"		<td>he " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>she " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
@@ -299,6 +464,11 @@ namespace SpanishVerbConjugator
 
                 // Future Tense - uses the infinitive, not the stem
                 // The same endings are used for all three types of verbs
+                if (bReflexiveVerb == true)
+                {
+                    // Remove the se at the end of the verb
+                    strSpanishInfinitive = strSpanishInfinitive.Remove(strSpanishInfinitive.Length - 2, 2);
+                }
                 strFirstPersonSingular = strSpanishInfinitive + "é";
                 strSecondPersonSingular = strSpanishInfinitive + "ás";
                 strThirdPersonSingular = strSpanishInfinitive + "á";
@@ -317,33 +487,103 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo me " + strFirstPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingular + "</td>");
+                }
+                
                 objStreamWriter.WriteLine(@"		<td>I will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros nos " + strFirstPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPlural + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>we will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú te " + strSecondPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingular + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros vos " + strSecondPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPlural + "</td>");
+                }              
                 objStreamWriter.WriteLine(@"		<td>you will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingular + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPlural + "</td>");
+                }     
                 objStreamWriter.WriteLine(@"		<td>you will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él se " + strThirdPersonSingular + "</td>");
+                }
+                else { 
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingular + "</td>");
+                }               
                 objStreamWriter.WriteLine(@"		<td>he will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPlural + "</td>");
+                }    
                 objStreamWriter.WriteLine(@"		<td>they will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella se " + strThirdPersonSingular + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingular + "</td>");
+                }               
                 objStreamWriter.WriteLine(@"		<td>she will " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas se " + strThirdPersonPlural + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPlural + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>they will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
@@ -361,42 +601,112 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo he " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo me he " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo he " + strPastParticiple + "</td>");
+                }               
                 objStreamWriter.WriteLine(@"		<td>I have " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros hemos " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros nos hemos " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros hemos " + strPastParticiple + "</td>");
+                }                
                 objStreamWriter.WriteLine(@"		<td>we have " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú has " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú te has " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú has " + strPastParticiple + "</td>");
+                }               
                 objStreamWriter.WriteLine(@"		<td>you have " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros habéis " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros vos habéis " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros habéis " + strPastParticiple + "</td>");
+                }                
                 objStreamWriter.WriteLine(@"		<td>you have " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted ha " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted se ha " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted ha " + strPastParticiple + "</td>");
+                }               
                 objStreamWriter.WriteLine(@"		<td>you have " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes han " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes se han " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes han " + strPastParticiple + "</td>");
+                }              
                 objStreamWriter.WriteLine(@"		<td>you have " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él ha " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él se ha " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él ha " + strPastParticiple + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>he has " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos han " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos se han " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos han " + strPastParticiple + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>they have " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella ha " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella se ha " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella ha " + strPastParticiple + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>she has " + strEnglishInfinitive + "ed</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas han " + strPastParticiple + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas se han " + strPastParticiple + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas han " + strPastParticiple + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>they have " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
                 objStreamWriter.WriteLine(@"</div>");
 
                 objStreamWriter.WriteLine(@"<p>The perfect tense in Spanish has two parts to it. The present tense of");
-                objStreamWriter.WriteLine(@"the verb <strong>haber</strong> (to have) plus the past participle. The present prefect tense"); 
+                objStreamWriter.WriteLine(@"the verb <strong lang=""es"">haber</strong> (to have) plus the past participle. The present prefect tense"); 
                 objStreamWriter.WriteLine(@"expresses past action closely related to the present. The English equivalent");
-                objStreamWriter.WriteLine(@"of <strong>haber</strong> + past participle is <em>to have done something</em>.</p>");
+                objStreamWriter.WriteLine(@"of <strong lang=""es"">haber</strong> + past participle is <em>to have done something</em>.</p>");
                 objStreamWriter.WriteLine(@"<p><img alt=""Note"" height=""10"" src=""images/note.gif"" width=""10""><span class=""NoteText"">"); 
                 objStreamWriter.WriteLine(@"This is the present perfect indicative, not the present perfect subjunctive.</span></p>");
 
@@ -411,33 +721,103 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingularImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo me " + strFirstPersonSingularImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">yo " + strFirstPersonSingularImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>I was " + strEnglishInfinitive + "ing, I used to " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPluralImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros nos " + strFirstPersonPluralImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">nosotros " + strFirstPersonPluralImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>we were " + strEnglishInfinitive + "ing, we used to " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingularImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú te " + strSecondPersonSingularImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">tú " + strSecondPersonSingularImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPluralImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros vos " + strSecondPersonPluralImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">vosotros " + strSecondPersonPluralImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingularImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted se " + strThirdPersonSingularImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">usted " + strThirdPersonSingularImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPluralImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes se " + strThirdPersonPluralImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ustedes " + strThirdPersonPluralImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>you were " + strEnglishInfinitive + "ing, you used to " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingularImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él se " + strThirdPersonSingularImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">él " + strThirdPersonSingularImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>he was " + strEnglishInfinitive + "ing, he used to " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPluralImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos se " + strThirdPersonPluralImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellos " + strThirdPersonPluralImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>they were " + strEnglishInfinitive + "ing, they used to " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	<tr>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingularImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella se " + strThirdPersonSingularImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ella " + strThirdPersonSingularImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>she was " + strEnglishInfinitive + "ing, she used to " + strEnglishInfinitive + "</td>");
-                objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPluralImperfect + "</td>");
+                if (bReflexiveVerb == true)
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas se " + strThirdPersonPluralImperfect + "</td>");
+                }
+                else
+                {
+                    objStreamWriter.WriteLine(@"		<td lang=""es-ES"">ellas " + strThirdPersonPluralImperfect + "</td>");
+                }
                 objStreamWriter.WriteLine(@"		<td>they were " + strEnglishInfinitive + "ing, they used to " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
@@ -497,8 +877,21 @@ namespace SpanishVerbConjugator
 
         }
 
+        /// <summary>
+        /// Check box for reflexive verbs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbReflexive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbReflexive.Checked == true)
+            {
+                bReflexiveVerb = true;
+            }
+            else {
+                bReflexiveVerb = false;
+            }
 
-
-
+        }
     }
 }
