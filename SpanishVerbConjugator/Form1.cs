@@ -113,17 +113,14 @@ namespace SpanishVerbConjugator
                 // Form the gerund
                 string strGerund = "";
                 string strPastParticiple = "";
-                string strPresentParticiple = "";
                 switch (strSelectedConjugation.Trim())
                 {
                     case "First-conjugation -ar verbs":
                             strGerund = strStem + "ando";
-                            strPresentParticiple = strStem + "ando";
                             strPastParticiple = strStem + "ado";
                          break;
                     default:
                             strGerund = strStem + "iendo";
-                            strPresentParticiple = strStem + "iendo";
                             strPastParticiple = strStem + "ido";
                         break;
                 }
@@ -159,8 +156,7 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"Transitive verb (takes a direct object) <br>");
                 objStreamWriter.WriteLine(@"Intransitive verb (does not take a direct object) </p>");
                 objStreamWriter.WriteLine(@"<p><b>infinitive:</b> <span lang=""es"">" + strSpanishInfinitive + "</span><br>");
-                objStreamWriter.WriteLine(@"<b>gerund:</b> <span lang=""es"">" + strGerund + "</span><br>");
-                objStreamWriter.WriteLine(@"<b>present participle:</b> <span lang=""es"">" + strPresentParticiple + "</span><br>");
+                objStreamWriter.WriteLine(@"<b>gerund / present participle:</b> <span lang=""es"">" + strGerund + "</span><br>");
                 objStreamWriter.WriteLine(@"<b>past participle:</b> <span lang=""es"">" + strPastParticiple + "</span><br>");
                 objStreamWriter.WriteLine(@"<b>auxiliary verb:</b> <span lang=""es"">haber</span></p>");
                 objStreamWriter.WriteLine();
