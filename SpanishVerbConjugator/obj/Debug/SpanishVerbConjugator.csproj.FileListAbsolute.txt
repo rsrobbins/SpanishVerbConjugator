@@ -1,0 +1,28 @@
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.exe.config
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.exe
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.pdb
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.csprojResolveAssemblyReference.cache
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.Form1.resources
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.Properties.Resources.resources
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.csproj.GenerateResource.Cache
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.exe
+\\step-profile\profile\rsrobbins\my documents\visual studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.pdb
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.exe.config
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.exe
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.pdb
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.exe
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.pdb
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.csprojResolveAssemblyReference.cache
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.Form1.resources
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.Properties.Resources.resources
+\\step\files\profile\rsrobbins\Documents\Visual Studio 2013\Projects\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.csproj.GenerateResource.Cache
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.exe.config
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.exe
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\bin\Debug\SpanishVerbConjugator.pdb
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.csproj.AssemblyReference.cache
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.Form1.resources
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.Properties.Resources.resources
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.csproj.GenerateResource.cache
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.csproj.CoreCompileInputs.cache
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.exe
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Debug\SpanishVerbConjugator.pdb

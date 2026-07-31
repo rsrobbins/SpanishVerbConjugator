@@ -1,0 +1,11 @@
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\bin\Release\SpanishVerbConjugator.exe.config
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\bin\Release\SpanishVerbConjugator.exe
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\bin\Release\SpanishVerbConjugator.pdb
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.csproj.AssemblyReference.cache
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.Form1.resources
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.Properties.Resources.resources
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.csproj.GenerateResource.cache
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.csproj.CoreCompileInputs.cache
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.exe
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.pdb
+C:\Users\rsrobbins\source\repos\SpanishVerbConjugator\SpanishVerbConjugator\obj\Release\SpanishVerbConjugator.exe.config

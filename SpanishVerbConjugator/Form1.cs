@@ -192,8 +192,7 @@ namespace SpanishVerbConjugator
 
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"">");
                 objStreamWriter.WriteLine(@"<span class=""SectionTitle""><span lang=""es"">El Presente</span> - The Present Tense</span>");
-                objStreamWriter.WriteLine(@"<div class=""TableDiv"">");
-                objStreamWriter.WriteLine(@"<table class=""tableData"">");
+                objStreamWriter.WriteLine(@"<table class=""DataTable"">");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Español</th>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
@@ -308,7 +307,6 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + ", they are " + strEnglishInfinitive + "ing</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
-                objStreamWriter.WriteLine(@"</div>");
 
                  // Past Tense
                 switch (strSelectedConjugation.Trim())
@@ -341,8 +339,7 @@ namespace SpanishVerbConjugator
 
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"">");
                 objStreamWriter.WriteLine(@"<span class=""SectionTitle""><span lang=""es"">El Pretérito</span> - The Past Tense</span>");
-                objStreamWriter.WriteLine(@"<div class=""TableDiv"">");
-                objStreamWriter.WriteLine(@"<table class=""tableData"">");
+                objStreamWriter.WriteLine(@"<table class=""DataTable"">");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Español</th>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
@@ -456,7 +453,6 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<td>they " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
-                objStreamWriter.WriteLine(@"</div>");
 
                 // Future Tense - uses the infinitive, not the stem
                 // The same endings are used for all three types of verbs
@@ -474,8 +470,7 @@ namespace SpanishVerbConjugator
 
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"">");
                 objStreamWriter.WriteLine(@"<span class=""SectionTitle""><span lang=""es"">El Futuro</span> - The Future Tense</span>");
-                objStreamWriter.WriteLine(@"<div class=""TableDiv"">");
-                objStreamWriter.WriteLine(@"<table class=""tableData"">");
+                objStreamWriter.WriteLine(@"<table class=""DataTable"">");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Español</th>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
@@ -583,13 +578,11 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<td>they will " + strEnglishInfinitive + "</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
-                objStreamWriter.WriteLine(@"</div>");
 
                 // The Present Perfect Tense
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"">");
                 objStreamWriter.WriteLine(@"<span class=""SectionTitle""><span lang=""es"">El Presente Perfecto</span> - The Present Perfect Tense</span>");
-                objStreamWriter.WriteLine(@"<div class=""TableDiv"">");
-                objStreamWriter.WriteLine(@"<table class=""tableData"">");
+                objStreamWriter.WriteLine(@"<table class=""DataTable"">");
                 objStreamWriter.WriteLine(@"	<tr>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Español</th>");
                 objStreamWriter.WriteLine(@"		<th lang=""es-ES"">Inglés</th>");
@@ -697,7 +690,6 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		<td>they have " + strEnglishInfinitive + "ed</td>");
                 objStreamWriter.WriteLine(@"	</tr>");
                 objStreamWriter.WriteLine(@"	</table>");
-                objStreamWriter.WriteLine(@"</div>");
 
                 objStreamWriter.WriteLine(@"<p>The perfect tense in Spanish has two parts to it. The present tense of");
                 objStreamWriter.WriteLine(@"the verb <strong lang=""es"">haber</strong> (to have) plus the past participle. The present prefect tense"); 
@@ -831,8 +823,7 @@ namespace SpanishVerbConjugator
                 // Examples
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"">");
                 objStreamWriter.WriteLine(@"<span class=""SectionTitle""><span lang=""es"">Ejemplos</span> - Examples</span>");
-                objStreamWriter.WriteLine(@"<div class=""TableDiv"">");
-                objStreamWriter.WriteLine(@"<table class=""tableData"">");
+                objStreamWriter.WriteLine(@"<table class=""DataTable"">");
                 objStreamWriter.WriteLine(@"	<thead>");
                 objStreamWriter.WriteLine(@"		<tr>");
                 objStreamWriter.WriteLine(@"			<th lang=""es-ES"">Español</th>");
@@ -854,8 +845,6 @@ namespace SpanishVerbConjugator
                 objStreamWriter.WriteLine(@"		</tr>");
                 objStreamWriter.WriteLine(@"	</tbody>");
                 objStreamWriter.WriteLine(@"</table>");
-                objStreamWriter.WriteLine(@"</div>");
-
 
                 objStreamWriter.WriteLine(@"<hr style=""border: 0; color: #000000; height: 1px;"" />");
                 objStreamWriter.WriteLine(@"<font color=""#000000"" face=""Verdana,Arial"" size=""1"">&copy; " + strThisYear + @" Robert Robbins. <span lang=""es"">Todos los derechos reservados.</span></font>");
